@@ -14,7 +14,7 @@ provider "aws" {
 # Key Pair for SSH access
 resource "aws_key_pair" "deployer" {
   key_name   = "deployer-key"
-  public_key = file("~/.ssh/id_rsa.pub")
+  public_key = file(pathexpand("~/.ssh/id_rsa.pub"))
 }
 
 # Security Group
